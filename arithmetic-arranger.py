@@ -22,7 +22,7 @@ def arithmetic_arranger(problems, show_answer = False):
         dash_line = dash_line + ((max(len(first), len(second)) + 2) * "-").rjust(alignment_length) + "    "
         sum_value = str(int(first) + int(second))
         third_line = third_line + sum_value.rjust(alignment_length) + "    "
-    arranged_problems = first_line + "\n" + second_line + "\n" + dash_line + "\n" + third_line * show_answer
+    arranged_problems = first_line.rstrip() + "\n" + second_line.rstrip() + "\n" + dash_line.rstrip() + ("\n" + third_line.rstrip()) * show_answer
     return arranged_problems
 
 print(arithmetic_arranger(["3 + 855", "3801 - 2", "45 + 43", "123 + 49"], True))
